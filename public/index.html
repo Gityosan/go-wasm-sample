@@ -2,6 +2,13 @@
   <head>
     <meta charset="utf-8" />
     <script src="wasm_exec.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+      integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="gsap.js"></script>
     <script>
       const go = new Go();
       WebAssembly.instantiateStreaming(
@@ -36,10 +43,22 @@
         color: #1010104d;
         cursor: inherit;
       }
+      #title {
+        color: #444;
+      }
+      .calculator {
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 30px;
+        border-radius: 10%;
+        background: #ffffff;
+        box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+      }
       .calculator > p#result {
         font-size: 36px;
         text-align: center;
-        border: 3px double #000;
+        max-width: 300px;
+        margin: 0 auto 10px;
       }
       .calculator > div {
         display: flex;
@@ -52,21 +71,32 @@
         height: 50px;
         text-align: center;
         font-size: 24px;
-        color: #fff;
-        background-color: black;
+        color: #444;
+        background-color: #efefef;
+        box-shadow: -6px -6px 14px rgba(255, 255, 255, 0.7),
+          -6px -6px 10px rgba(255, 255, 255, 0.5),
+          6px 6px 8px rgba(255, 255, 255, 0.075),
+          6px 6px 10px rgba(0, 0, 0, 0.15);
         border-radius: 100%;
         cursor: pointer;
         border: none;
       }
       .calculator > div > button:hover {
-        color: #000;
-        background-color: #fff;
-        border: 1px solid #000;
+        box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6),
+          -2px -2px 4px rgba(255, 255, 255, 0.4),
+          2px 2px 2px rgba(255, 255, 255, 0.05), 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .calculator > div > button:active {
+        box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.7),
+          inset -2px -2px 4px rgba(255, 255, 255, 0.5),
+          inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+          inset 2px 2px 4px rgba(0, 0, 0, 0.15);
       }
     </style>
   </head>
   <body>
-    <h1 id="title">Go WebAssembly</h1>
+    <h1 id="title">Go WebAssembly Sample App</h1>
+    <h2 id="title">With GSAP</h2>
     <!-- <div class="button_container">
       <h1>Stop Watch</h1>
       <p class="display" id="display">0.0</p>
