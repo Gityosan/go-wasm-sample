@@ -1,4 +1,24 @@
 {
+  "editor.tabSize": 2,
+  // "editor.hover.enabled": false,
+  "editor.guides.bracketPairs": true,
+  "[html]":{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true
+  },
+  "stylelint.validate": ["css", "scss"],
+  "css.validate": false,
+  "scss.validate": false,
   "go.toolsEnvVars": {
     "GOOS": "js",
     "GOARCH": "wasm"
